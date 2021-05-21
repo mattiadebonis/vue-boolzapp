@@ -1,5 +1,155 @@
+/* COMMON */
 *{
     box-sizing: border-box;
     padding: 0;
     margin:0;
 }
+
+body{
+    background-color: rgb(218,219,212);
+}
+
+.wdt_100{
+    width: 100%;
+}
+
+.flex{
+    display:flex;
+}
+
+
+/* /COMMON */
+#app{
+    display:flex;
+    width: 80vw;
+    height: 90vh;
+    margin: 5vh 10vw;
+}
+
+
+/* menù laterale */
+#menu{
+    width: 40%;
+    height: 100%;
+    background-color:white ;
+}
+
+#utente{
+    position: relative;
+    background-color:rgb(234,234,234);
+    height: 75px;
+
+    padding: 10px;
+}
+
+.img_utente{
+    width:50px;
+    height: 50px;
+    border-radius: 50px;
+}
+
+.left_utente{
+    width: 20%;
+}
+
+.center_utente{
+    width:50%;
+
+}
+
+.right_utente{
+    position: absolute;
+    right: 0px;
+    width:30%;
+}
+
+.right_utente svg{
+    
+}
+
+#alert{
+    background-color:rgb(142,218,251) ;
+    height: 50px;
+}
+
+#search_bar {
+}
+#search_bar input{
+    width: 100%;
+}
+
+
+/* MENU CHAT ATTIVE*/
+#menu_chat{
+    overflow-y: auto;
+}
+
+.chat_active{
+    background-color: white;
+    list-style: none;
+}
+
+.img_chat_active{
+    width: 5%;
+}
+
+.img_chat_active img{
+    height: 50px;
+}
+
+.msg_chat_active{
+    width: 50%;
+}
+
+.img_chat_active{
+    width: 25%;
+}
+/* /menù laterale */
+
+
+/* view chat*/
+#chat{
+    width: 60%;
+    height: 100%;
+}
+
+#header_chat{
+    background-color:rgb(234,234,234);
+    width:100%;
+    height: 75px;
+    padding: 10px;
+}
+
+#main_chat{
+    width: 100%;
+    height: calc(100% - 125px);
+    padding: 10px;
+    background-image: url("../img/mine.jpg") ;
+    background-size: contain;
+    background-repeat: repeat;
+}
+
+.message{
+    text-align: right;
+    margin: 10px;
+}
+.sent{
+    display: inline-block;
+    background-color:rgb(213,249,186);
+
+}
+.received{
+    display: inline-block;
+    background-color: white;
+}
+
+#footer_chat{
+    background-color: rgb(243, 238, 234);
+    height: 50px;
+    width:100%;
+}
+#footer_chat input{
+    width: 90%;
+    line-height: 20px;
+}
+/* /view chat*/
