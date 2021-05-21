@@ -7,6 +7,9 @@
     <!-- css-->
     <link rel="stylesheet" href="css/style.css">
     <title>Boolzap di Mattia De Bonis</title>
+
+    <!-- vue-->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 </head>
 <body>
     <!-- app-->
@@ -57,64 +60,12 @@
             <!-- menu chat-->
             <div ixd="menu_chat">
                 <ul>
-                    <li class="flex chat_active">
+                    <li class="flex chat_active" v-for="(user, index) in contacts">
                         <div class="img_chat_active">
-                            <img src="img/avatar_1.jpg" alt="avatar_1">
+                            <img :src="showUserImg(index)" alt="avatar_1">
                         </div>
                         <div class="msg_chat_active">
-                            <p class="name_user">Mattia</p>
-                            <p class="preview_msg">Mangiamo la pizza stasera?</p>
-                        </div>
-                        <div class="time_chat_active flex">
-                            <p>10/01/2020</p>
-                            <p>16:15:22</p>
-                        </div>
-                    </li>
-                    <li class="flex chat_active">
-                        <div class="img_chat_active">
-                            <img src="img/avatar_1.jpg" alt="avatar_1">
-                        </div>
-                        <div class="msg_chat_active">
-                            <p class="name_user">Mattia</p>
-                            <p class="preview_msg">Mangiamo la pizza stasera?</p>
-                        </div>
-                        <div class="time_chat_active flex">
-                            <p>10/01/2020</p>
-                            <p>16:15:22</p>
-                        </div>
-                    </li>
-                    <li class="flex chat_active">
-                        <div class="img_chat_active">
-                            <img src="img/avatar_1.jpg" alt="avatar_1">
-                        </div>
-                        <div class="msg_chat_active">
-                            <p class="name_user">Mattia</p>
-                            <p class="preview_msg">Mangiamo la pizza stasera?</p>
-                        </div>
-                        <div class="time_chat_active flex">
-                            <p>10/01/2020</p>
-                            <p>16:15:22</p>
-                        </div>
-                    </li>
-                    <li class="flex chat_active">
-                        <div class="img_chat_active">
-                            <img src="img/avatar_1.jpg" alt="avatar_1">
-                        </div>
-                        <div class="msg_chat_active">
-                            <p class="name_user">Mattia</p>
-                            <p class="preview_msg">Mangiamo la pizza stasera?</p>
-                        </div>
-                        <div class="time_chat_active flex">
-                            <p>10/01/2020</p>
-                            <p>16:15:22</p>
-                        </div>
-                    </li>
-                    <li class="flex chat_active">
-                        <div class="img_chat_active">
-                            <img src="img/avatar_1.jpg" alt="avatar_1">
-                        </div>
-                        <div class="msg_chat_active">
-                            <p class="name_user">Mattia</p>
+                            <p class="name_user">{{user.name}}</p>
                             <p class="preview_msg">Mangiamo la pizza stasera?</p>
                         </div>
                         <div class="time_chat_active flex">
@@ -190,5 +141,8 @@
         <!-- /view chat-->
     </div>
     <!-- /app-->
+
+    <!-- javascript-->
+    <script src="js/script.js"></script>
 </body>
 </html>
