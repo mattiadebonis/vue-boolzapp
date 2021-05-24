@@ -58,20 +58,22 @@
                 <input type="text" placeholder="Cerca o inizia una nuova chat">
             </div>
             <!-- menu chat-->
-            <div ixd="menu_chat">
+            <div id="menu_chat">
                 <ul>
                     <li class="flex chat_active" v-for="(user, index) in contacts">
-                        <div class="img_chat_active">
-                            <img :src="showUserImg(index)" alt="avatar_1">
-                        </div>
-                        <div class="msg_chat_active">
-                            <p class="name_user">{{user.name}}</p>
-                            <p class="preview_msg">Mangiamo la pizza stasera?</p>
-                        </div>
-                        <div class="time_chat_active flex">
-                            <p>10/01/2020</p>
-                            <p>16:15:22</p>
-                        </div>
+                        <a @click="userSelected(index)">
+                            <div class="img_chat_active">
+                                <img :src="showUserImg(index)" alt="avatar_1">
+                            </div>
+                            <div class="msg_chat_active">
+                                <p class="name_user">{{user.name}}</p>
+                                <p class="preview_msg">Mangiamo la pizza stasera?</p>
+                            </div>
+                            <div class="time_chat_active flex">
+                                <p>10/01/2020</p>
+                                <p>16:15:22</p>
+                            </div>
+                        </a>
                     </li>
                 </ul>
 
@@ -83,9 +85,9 @@
         <!-- view chat-->
         <div id="chat">
             <div id="header_chat" class="flex">
-                <img src="img/avatar_2.jpg" alt="img-utente" class="img_utente">
+                <img :src="showUserImg(indexSelezionato)" alt="img-utente" class="img_utente">
                 <div>
-                    <p>Mattia</p>
+                    <p>{{contacts[indexSelezionato].name}}</p>
                     <p>Ultimo accesso oggi alle 10/01/2020 16:15:22</p>
                 </div>
                 <!-- icone header chat-->
@@ -104,22 +106,13 @@
 
             </div>
             <div id="main_chat">
-                <div class="message">
-                    <div class="sent">
-                        <p>Hai portato a spasso il cane?</p>
-                        <p>10/01/2020 16:30:55</p>
-                    </div>
-                </div>
-                <div class="message">
-                    <div class="sent">
-                        <p>Ricordati di dargli da mangiare</p>
-                        <p>10/01/2020 16:30:55</p>
-                    </div>
-                </div>
-                <div class="message">
-                    <div class="received">
-                        <p>Hai portato a spasso il cane?</p>
-                        <p>10/01/2020 16:30:55</p>
+                <!-- creare if se nome utente è uguale a utente selezionato allora con v for mostra i messaggi con v bind selezionare la classe sent o received-->
+                <div v-for="(message, index) in contacts[indexSelezionato].messages" class="message">
+                    <div :class="message.status">
+                        
+                        <p>{{message.text}}</p>
+                        <p>{{message.date}}</p>
+
                     </div>
                 </div>
             </div>

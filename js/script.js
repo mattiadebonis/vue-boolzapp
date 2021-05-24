@@ -87,14 +87,20 @@ var app = new Vue({
                 ],
             },
         ],
-        indexSelezionato = 0,
+        indexSelezionato : 0,
     },
 
     methods:{
+        //mostra immagine utente
         showUserImg : function(indexUser){
             var imgName = "img/avatar" + this.contacts[indexUser].avatar + ".jpg";
             console.log(imgName);
             return imgName;
-        }
+        },
+        //salva utente selezionato
+        userSelected : function(indexSelected){
+            this.indexSelezionato = indexSelected;
+        },
+
     }
 });
