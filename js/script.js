@@ -88,6 +88,7 @@ var app = new Vue({
             },
         ],
         indexSelezionato : 0,
+        nuovoMessaggio : "",
     },
 
     methods:{
@@ -101,6 +102,24 @@ var app = new Vue({
         userSelected : function(indexSelected){
             this.indexSelezionato = indexSelected;
         },
+        sendMessage : function() {
+            //concatena il messaggio di risposta
+            this.contacts[this.indexSelezionato].messages.push({
+                date: '28/03/2020 10:10:40',
+                text: this.nuovoMessaggio,
+                status: 'sent'
+            })
+            this.nuovoMessaggio = "";
+            
+        },
+        receivMessage : function(){
+            setTimeout(() => this.contacts[this.indexSelezionato].messages.push({
+                date: '29/03/2020 10:11:40',
+                text: "Ok",
+                status: 'received'
+            }), 2000);
+            
+        }
 
     }
 });
