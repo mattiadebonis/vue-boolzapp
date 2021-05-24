@@ -86,12 +86,13 @@ var app = new Vue({
                     }
                 ],
             },
-        ]    
+        ],
+        indexSelezionato = 0,
     },
 
     methods:{
         showUserImg : function(indexUser){
-            var imgName = "img/avatar" + contacts[indexUser].avatar + ".jpg";
+            var imgName = "img/avatar" + this.contacts[indexUser].avatar + ".jpg";
             console.log(imgName);
             return imgName;
         }
