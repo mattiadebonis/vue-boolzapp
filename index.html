@@ -55,12 +55,12 @@
 
             <!-- search bar-->
             <div id="search_bar">                
-                <input type="text" placeholder="Cerca o inizia una nuova chat">
+                <input v-model="searchedUser" type="text" placeholder="Cerca o inizia una nuova chat">
             </div>
             <!-- menu chat-->
             <div id="menu_chat">
                 <ul>
-                    <li class="flex chat_active" v-for="(user, index) in contacts">
+                    <li class="flex chat_active" v-for="(user, index) in contacts" v-if="isSearched(user.name)">
                         <a @click="userSelected(index)">
                             <div class="img_chat_active">
                                 <img :src="showUserImg(index)" alt="avatar_1">

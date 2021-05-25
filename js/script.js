@@ -89,6 +89,7 @@ var app = new Vue({
         ],
         indexSelezionato : 0,
         nuovoMessaggio : "",
+        searchedUser: "",
     },
 
     methods:{
@@ -102,7 +103,7 @@ var app = new Vue({
         userSelected : function(indexSelected){
             this.indexSelezionato = indexSelected;
         },
-        sendMessage : function() {
+        sendMessage : function(){
             //concatena il messaggio di risposta
             this.contacts[this.indexSelezionato].messages.push({
                 date: '28/03/2020 10:10:40',
@@ -117,8 +118,16 @@ var app = new Vue({
                 date: '29/03/2020 10:11:40',
                 text: "Ok",
                 status: 'received'
-            }), 2000);
+            }), 1000);
             
+        },
+        isSearched : function (nameUser){
+            var contained = false;
+            if (nameUser.includes(this.searchedUser)){
+                return contained = true;
+            }
+            return contained;
+
         }
 
     }
