@@ -91,6 +91,7 @@ body{
     width: calc(100% - 14px);
     height: 30px;
     font-size: 12px;
+    padding: 10px;
 }
 
 /* MENU CHAT ATTIVE*/
@@ -143,42 +144,81 @@ body{
 }
 
 #header_chat{
+    align-items: center;
     background-color:rgb(234,234,234);
     width:100%;
     height: 75px;
     padding: 10px;
 }
 
+.right_header{
+    text-align:right;
+}
+
 #main_chat{
     width: 100%;
     height: calc(100% - 125px);
     padding: 10px;
-    background-image: url("../img/mine.jpg") ;
-    background-size: contain;
+    background-image: url("../img/mine.jpg");
     background-repeat: repeat;
+    background-attachment: scroll;
+}
+
+.last_seen{
+    color: gray;
+    font-size:14px;
 }
 
 .message{
-    text-align: right;
     margin: 10px;
+    text-align: right;
+    list-style: none;
+    padding: 2px;
 }
-.sent{
-    display: inline-block;
-    background-color:rgb(213,249,186);
 
-}
-.received{
+.sent{
+    position: relative;
+    text-align: left;
     display: inline-block;
+    width: 350px;
+    background-color:rgb(213,249,186);
+    padding: 15px;
+    border-radius: 15px;
+}
+
+.received{
+    position: relative;
+    text-align: left;
     background-color: white;
+    width: 350px;
+    padding: 15px;
+    border-radius: 15px;
+}
+
+.time_message{
+    position:absolute;
+    right: 10px;
+    bottom: 2px;
+    text-align:right;
+    font-size: 11px;
+    color:lightgray;
+    font-weight: 700;
 }
 
 #footer_chat{
+    align-items: center;
+    justify-content: space-between;
     background-color: rgb(243, 238, 234);
     height: 50px;
     width:100%;
 }
+    
 #footer_chat input{
-    width: 90%;
-    line-height: 20px;
+    width: 85%;
+    height: 30px;
+    margin: 10px;
+    border-width: 0px;
+    border-radius: 5px;
+    padding: 10px;
 }
 /* /view chat*/
