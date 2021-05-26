@@ -96,13 +96,15 @@ var app = new Vue({
         //mostra immagine utente
         showUserImg : function(indexUser){
             var imgName = "img/avatar" + this.contacts[indexUser].avatar + ".jpg";
-            console.log(imgName);
             return imgName;
         },
-        //salva utente selezionato
+        
+        //salva indice dell'utente selezionato
         userSelected : function(indexSelected){
             this.indexSelezionato = indexSelected;
         },
+
+        //salva messaggio inviato dall'utente
         sendMessage : function(){
             //concatena il messaggio di risposta
             this.contacts[this.indexSelezionato].messages.push({
@@ -111,8 +113,9 @@ var app = new Vue({
                 status: 'sent'
             })
             this.nuovoMessaggio = "";
-            
         },
+
+        // dopo 1 secondo dalla chiamata pusha un nuovo messaggio "ricevuto" nella chat aperta
         receivMessage : function(){
             setTimeout(() => this.contacts[this.indexSelezionato].messages.push({
                 date: '29/03/2020 10:11:40',
@@ -121,13 +124,22 @@ var app = new Vue({
             }), 1000);
             
         },
+
+        //restituisce vero se caratteri inseriti nella ricerca sono presenti nel nome dell'utente della chat
         isSearched : function (nameUser){
             var contained = false;
             if (nameUser.includes(this.searchedUser)){
                 return contained = true;
             }
             return contained;
+        },
 
+        // se la chat è selezionata restituisce il nome della classe setta la proprietà background:lightgray
+        isSelected : function(indexItem){
+            var background = "back_lightgray";
+            if (indexItem == this.indexSelezionato){
+                return background;
+            }
         }
 
     }
