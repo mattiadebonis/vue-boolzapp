@@ -198,7 +198,7 @@ body{
 }
 
 .right_header i{
-    margin: 10px;
+    margin-right: 10px;
     color: gray;
     font-size: 20px;
 }
@@ -228,7 +228,7 @@ body{
     position: relative;
     text-align: left;
     display: inline-block;
-    width: 350px;
+    width: 40%;
     background-color:rgb(213,249,186);
     padding: 15px;
     border-radius: 15px;
@@ -238,7 +238,7 @@ body{
     position: relative;
     text-align: left;
     background-color: white;
-    width: 350px;
+    width: 40%;
     padding: 15px;
     border-radius: 15px;
 }
@@ -251,6 +251,7 @@ body{
     font-size: 11px;
     color:lightgray;
     font-weight: 700;
+    padding-top:5%;
 }
 
 #footer_chat{
